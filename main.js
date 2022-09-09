@@ -67,7 +67,7 @@ const createWindow = () => {
         }
       },
       {
-        label: 'Inspect element"',
+        label: 'Inspect element',
         click: () => {
           win.webContents.openDevTools()
         }
