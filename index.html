@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <title>AI Student Community</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+  <div class="sidebar">
+    <div class="logo-details">
+      <i class='bx bx-desktop icon'></i>
+        <div class="logo_name">AISC Desktop</div>
+        <i class='bx bx-menu' id="btn" ></i>
+    </div>
+    <ul class="nav-list">
+      <li>
+          <i class='bx bx-wrench' ></i>
+         <input type="text" placeholder="Desktop: v2.0.0" disabled>
+      </li>
+      <li id="btn_Home">
+        <a href="#">
+          <i class='bx bx-home'></i>
+          <span class="links_name">Home</span>
+        </a>
+         <span class="tooltip">Home</span>
+      </li>
+      <li id="btn_Forum">
+       <a href="#">
+         <i class='bx bx-message-square-dots' ></i>
+         <span class="links_name">Forum</span>
+       </a>
+       <span class="tooltip">Forum</span>
+     </li>
+     <li id="events">
+       <a href="#">
+         <i class='bx bx-calendar-event' ></i>
+         <span class="links_name">Events</span>
+       </a>
+       <span class="tooltip">Events</span>
+     </li>
+     <li id="challenges">
+       <a href="#">
+         <i class='bx bx-brain' ></i>
+         <span class="links_name">Challenges</span>
+       </a>
+       <span class="tooltip">Challenges</span>
+     </li>
+     <li id="blogs">
+       <a href="#">
+         <i class='bx bx-message-square-edit' ></i>
+         <span class="links_name">Blogs</span>
+       </a>
+       <span class="tooltip">Blogs</span>
+     </li>
+     <li id="learn">
+       <a href="#">
+         <i class='bx bx-brain' ></i>
+         <span class="links_name">Let's Learn</span>
+       </a>
+       <span class="tooltip">Let's Learn</span>
+     </li>
+     <li id="projects">
+       <a href="#">
+         <i class='bx bx-chip' ></i>
+         <span class="links_name">AI Projects</span>
+       </a>
+       <span class="tooltip">AI Projects</span>
+     </li>
+    </li>
+    <!-- <li id="logout" class="logout">
+      <a href="#">
+        <i class='bx bx-log-out' ></i>
+        <span class="links_name">Logout</span>
+      </a>
+     </li> -->
+    </ul>
+  </div>
+  <webview class="home-section" id="webview"  src="https://forum.aistudent.community" preload="js/preload.js" autosize="on" style="min-width:900px; min-height:1200px" scrolling="yes" frameborder="0"></webview>
+
+  <script src="js/script.js"></script>
+
+</body>
+</html>

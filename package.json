@@ -1,0 +1,29 @@
+{
+  "name": "aisc_desktop",
+  "version": "2.0.0",
+  "description": "AISC unoffical Desktop application",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --ia32 --x64",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "build": {
+    "productName": "AISC Desktop",
+    "appId": "com.aisc.unoffical.shashankx86",
+    "win": {
+      "target": "MSI",
+      "icon": "icon/aisc_round.png",
+      "publisherName": "shashankx86"
+    }
+  },
+  "author": "shashankx86 <shashankspis20@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^20.1.4",
+    "electron-builder": "^23.3.3"
+  },
+  "dependencies": {
+    "electron-context-menu": "^3.5.0"
+  }
+}
