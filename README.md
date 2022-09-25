@@ -14,7 +14,7 @@ AI Student Community Unofficial Desktop app
 - Node.js
 
 ```bash
-build.bat
+> build.bat
 ```
 or
 ```bash
