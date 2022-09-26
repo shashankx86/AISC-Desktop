@@ -1,25 +1,17 @@
 const { app, BrowserWindow, ipcMain } = require('electron');
 const contextMenu = require('electron-context-menu');
-const paste = require("better-pastebin");
+const {RentryClient} = require("rentry-pastebin");
 const ncp = require("copy-paste");
 const path = require('path');
 
-function createPaste(key, content) {
-  paste.setDevKey(key);
-    paste.create({
-        contents: content,
-        name: "",
-        privacy: "1",
-        format: "text",
-        expires: "N"
-    }, function(success, url) {
-        if(success) {
-          ncp.copy(url)
-          console.log(url);
-        } else {
-            alert("Failed to create Paste");
-        }
-  });
+function createPaste(content) {
+  const client = new RentryClient();
+  (async () => {
+      await client.createToken();
+      const paste = await client.createPaste({content: content})
+      var output = (`https://rentry.co/${paste.url}`);
+      ncp.copy(output)
+  })()
 }
 
 const createWindow = () => {
@@ -75,7 +67,7 @@ const createWindow = () => {
             label: 'Pastebin “{selection}”',
             visible: parameters.selectionText.trim().length > 0,
             click: () => {
-              createPaste("xoImaDw6fZIPm8fgA1wsUOHS6lPObF4x", parameters.selectionText)              
+              createPaste(parameters.selectionText)              
             }
           }
         ]
