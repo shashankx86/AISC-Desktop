@@ -3,10 +3,10 @@ AI Student Community Unofficial Desktop app
 
 - Feature
   - New UI
+  - Pastebin
 - Upcomming Feature
   - Themes
   - Code Highlight (better than current one)
-  - Pastebin
   
 # How to Build?
 
