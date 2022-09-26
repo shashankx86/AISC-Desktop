@@ -1,6 +1,26 @@
 const { app, BrowserWindow, ipcMain } = require('electron');
 const contextMenu = require('electron-context-menu');
+const paste = require("better-pastebin");
+const ncp = require("copy-paste");
 const path = require('path');
+
+function createPaste(key, content) {
+  paste.setDevKey(key);
+    paste.create({
+        contents: content,
+        name: "",
+        privacy: "1",
+        format: "text",
+        expires: "N"
+    }, function(success, url) {
+        if(success) {
+          ncp.copy(url)
+          console.log(url);
+        } else {
+            alert("Failed to create Paste");
+        }
+  });
+}
 
 const createWindow = () => {
     const win = new BrowserWindow({
@@ -8,6 +28,7 @@ const createWindow = () => {
       height: 700,
       title: "AI Student Community",
       icon: path.join(__dirname, 'icon/aisc_round.png',),
+      autoHideMenuBar: true,
       webPreferences: {
         nodeIntegration: true,
         webviewTag: true,
@@ -31,7 +52,7 @@ const createWindow = () => {
         window: contents,
         showCopyImageAddress: true,
         showCopyVideoAddress: true,
-        prepend: () => [
+        prepend: (defaultActions, parameters, browserWindow) => [
           {
             label: 'Back',
             click: () => {
@@ -48,6 +69,13 @@ const createWindow = () => {
             label: 'Reload',
             click: () => {
               win.webContents.executeJavaScript("webview.reload();");              
+            }
+          },
+          {
+            label: 'Pastebin “{selection}”',
+            visible: parameters.selectionText.trim().length > 0,
+            click: () => {
+              createPaste("xoImaDw6fZIPm8fgA1wsUOHS6lPObF4x", parameters.selectionText)              
             }
           }
         ]
