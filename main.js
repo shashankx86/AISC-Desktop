@@ -2,16 +2,6 @@ const { app, BrowserWindow, ipcMain } = require('electron');
 const contextMenu = require('electron-context-menu');
 const path = require('path');
 
-function xd() {
-  const wv = document.getElementById("webview");
-  wv.addEventListener('dom-ready', () => {
-    const devtoolsView = document.getElementById('DevTools');
-    const browser = wv.getWebContents();
-    browser.setDevToolsWebContents(devtoolsView.getWebContents());
-    browser.openDevTools();
-});
-}
-
 const createWindow = () => {
     const win = new BrowserWindow({
       width: 1200,
