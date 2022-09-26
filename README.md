@@ -14,10 +14,6 @@ AI Student Community Unofficial Desktop app
 - Node.js
 
 ```bash
-> build.bat
-```
-or
-```bash
 > npm install --global yarn && yarn && npm i
 > npm run dist
 ```
