@@ -33,4 +33,4 @@ function inject(){
     };
 };
 
-setTimeout(function(){ inject();}, 450);
+setTimeout(function(){ inject();}, 600);
