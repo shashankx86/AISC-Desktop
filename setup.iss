@@ -27,7 +27,7 @@ LicenseFile=.\LICENSE
 ; Uncomment the following line to run in non administrative install mode (install for current user only.)
 ;PrivilegesRequired=lowest
 PrivilegesRequiredOverridesAllowed=commandline
-OutputBaseFilename=setup
+OutputBaseFilename=setup_2.1.0
 SetupIconFile=.\icon\aisc_round.ico
 Compression=lzma
 SolidCompression=yes
