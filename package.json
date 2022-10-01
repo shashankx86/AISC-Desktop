@@ -6,6 +6,8 @@
   "scripts": {
     "start": "electron .",
     "dist": "electron-builder --ia32 --x64",
+    "dist64": "electron-builder --x64",
+    "dist32": "electron-builder --ia32",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "build": {
